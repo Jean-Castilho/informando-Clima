@@ -4,30 +4,40 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <link rel="stylesheet" href="css/global.css" />
 
     <title>Clima</title>
   </head>
   <body>
-    <section>
+    <section class="cidadeLocal">
 
-      <article class="climaDiario">
+      <input
+        type="text"
+        name="city"
+        class="textcity"
+        value="arraial do cabo"
+        placeholder="nome da cidade?"
+      />
 
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+      <span class="btnclima"> </span>
 
-      </article>
-
-      <section class="cidadeLocal">
-        
-        <input type="text" name="city" class="textcity">
-        <input type="button" value="Pesquisar" class="btnclima">
-
-      </section>
+      
+    
     </section>
+
+    <article class="climaDiario">
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </article>
+
     <script src="APIclima.js"></script>
   </body>
 </html>

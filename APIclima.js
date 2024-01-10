@@ -5,14 +5,9 @@ const keyapi = "26fd334d6b582645ee9f618856253924";
 
 const validtext = (inputcity) => {
   //validando texto do input .textcity
+  
+  return inputcity.length != 0 ?  true :  false
 
-  if (inputcity.length != 0) {
-    let namecity = inputcity;
-    return namecity;
-  } else {
-    alert("por favor prencha o campo!!");
-    return false;
-  }
 };
 
 const buscandoapi = async (city) => {
@@ -30,13 +25,16 @@ const exibinformations = async (city) => {
   const infos = await buscandoapi(city);
 
   console.log(infos);
+  
 };
 
 
 // tags HTML
+
 const inputcity = document.querySelector(".textcity");
 const SearchBtn = document.querySelector(".btnclima");
 
+// Evento
 SearchBtn.addEventListener(
   "click",
 
