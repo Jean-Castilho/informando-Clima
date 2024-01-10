@@ -1,19 +1,17 @@
-input {
-    color: rgb(13, 13, 14);
-    border: none;
-    border-radius: 6px;
-    background-color: rgb(237, 237, 238);
-}
 
 input.textcity{
-    padding: 12px;
+    background-color: transparent;
+    border: none;
     height: 32px;
     width: 270px;
+    padding: 12px;
     font-weight: 800;
-    font-size: 22px;    
+    font-size: 22px;
 }
 
-span.btnclima{
+button.btnclima{
+    background-color: transparent;
+    border: none;
     height: 50px;
     width: 50px;
     display: flex;
