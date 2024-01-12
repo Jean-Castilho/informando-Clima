@@ -1,15 +1,13 @@
-// utilize este arquivo para orgnizar e explicar metodos utilizado no projeto.
 
-class AppClima {
-  constructor() {
-    this.inits();
-  }
+//imports
+import { InitLocalStorage } from "./Scripts/localStorage.js";
 
-  inits() {
-    console.log("funciona");
 
-    window.addEventListener("load", () => {});
-  }
-}
+//Events
+window.addEventListener("load", (event) => {
+  event.preventDefault();
 
-const appclima = new AppClima();
+  //iniciando armazenamento do browser;
+  InitLocalStorage();
+
+});

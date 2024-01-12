@@ -1,58 +1,79 @@
-//utilizando o metodo do browser para armazenar informaçoes no navegador local;
-const localStoragCity = JSON.parse(localStorage.getItem("StorageCity"));
-
-//iniciando armazenamento local do site site;
-let Allcity = localStorage.getItem("StorageCity") !== null ? localStoragCity : [];
-
-//exibi as informaçao na iniciaçao do arquivo;
-const inits = () => {
-  Allcity.forEach((element) => {
-    console.log(element);
-  });
-};
-
-inits();
-
-//adicionando indentificaçao;
-const geraID = () => {
-  return Allcity.length + 1;
-};
-
-//verifica os dados de entrada!!
-const VerifiInput = (namecity) => {
-
-  let city = {
-    
-    id: geraID(),
-    city: namecity,
-
-  };
-
-  //validando texto do input .textcity;
-  return namecity.length != 0 ? city : alert("verifique os dados");
-};
-
-//sobe o objeto para o armazenamento do browser;
-const updatelocal = () => {
-  //estude mais sobre o metodo LocalStorage;
-  localStorage.setItem("StorageCity", JSON.stringify(Allcity));
-};
-
+//Tag HTML;
 const btnclima = document.querySelector(".btnclima");
 
-//mesclar algumas funcionalidade com o localStorage.js
+//utilizando o metodo do browser para armazenar informaçoes no navegador local;
+const localStoragCity = JSON.parse(localStorage.getItem("StorageCitys"));
 
-btnclima.addEventListener("click", (event) => {
+//Iniciando LocalStorage
 
-  event.preventDefault();
+//exibi as informaçao na iniciaçao;
+export function InitLocalStorage() {
 
+let AllCity =
+  localStorage.getItem("StorageCitys") !== null ? localStoragCity : [];
+
+  AllCity.length !== 0 ? LoadingCitys(AllCity) : false;
+
+  console.log(AllCity);
+
+  btnclima.addEventListener("click", (event) => {
+
+    event.preventDefault();
+
+    AddCitys(VerifiInput(),AllCity);
+
+  });
+
+};
+
+/*=====Funçoes=====*/
+
+//verifica os dados de entrada!!
+const VerifiInput = () => {
   let namecity = document.querySelector(".textcity").value;
 
-  //adicionando objeto no array local;
-  Allcity.push(VerifiInput(namecity));
+  //validando texto do input .textcity;
+  return namecity.length != 0 ? namecity : alert("verifique os dados");
+};
 
-  updatelocal();
-  //percorre o array de cidades no navegador local;
-  inits();
+//adicionando indentificaçao;
+const GeraID = (allcity) => {
+  return allcity.length + 1;
+};
 
-});
+//adicionando o objeto no array local Allcity
+const AddCitys = (namecity,AllCity) => {
+  
+  //objeto do array;
+  const city = {
+    ID: GeraID(AllCity),
+    city: namecity,
+  };
+
+  //guarda o valor no Array antes de subir pro LocalStorage;
+  AllCity.push(city);
+
+  //sobe o objeto para o armazenamento do browser;
+  Updatelocal(AllCity);
+
+  //percorre o array de cidades no armazenamento do navegador local;
+  LoadingCitys(AllCity);
+
+};
+
+//subindo o Array allcity para o localStorage utilizando o metodo setItem;
+const Updatelocal = (allcity) => {
+  
+  //estudar mais sobre metodos do proto: LocalStorage;
+  localStorage.setItem("StorageCitys", JSON.stringify(allcity));
+
+};
+
+//percorrendo o array do localStorage;
+const LoadingCitys = (allcity) => {
+  
+  allcity.forEach((element) => {
+    console.log(element.city);
+  });
+
+};
