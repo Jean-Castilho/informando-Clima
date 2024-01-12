@@ -13,7 +13,6 @@ const inits = () => {
 
 inits();
 
-
 //adicionando indentificaçao;
 const geraID = () => {
   return Allcity.length + 1;
@@ -41,8 +40,7 @@ const updatelocal = () => {
 
 const btnclima = document.querySelector(".btnclima");
 
-
-//mescle algumas funcionalidade com o localStorage.js
+//mesclar algumas funcionalidade com o localStorage.js
 
 btnclima.addEventListener("click", (event) => {
 
@@ -54,7 +52,7 @@ btnclima.addEventListener("click", (event) => {
   Allcity.push(VerifiInput(namecity));
 
   updatelocal();
-  //percorre o array de cidades no navegador local
+  //percorre o array de cidades no navegador local;
   inits();
 
 });
