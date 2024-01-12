@@ -1,20 +1,44 @@
+@media (min-width: 400px) and (max-width: 600px) {
 
-input.textcity{
-    background-color: transparent;
-    border: none;
-    height: 32px;
-    width: 270px;
-    padding: 12px;
-    font-weight: 800;
-    font-size: 22px;
+  header {
+    width: 100vw;
+    height: 56vh;
+  }
+
+  form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 28px;
+    width: 140px;
+  }
+
+  .climaDiario div {
+    height: 50px;
+    width: 350px;
+  }
+
 }
 
-button.btnclima{
-    background-color: transparent;
-    border: none;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+
+input.textcity {
+  background-color: transparent;
+  border: none;
+  height: 32px;
+  width: 270px;
+  padding: 12px;
+  font-weight: 800;
+  font-size: 22px;
+}
+
+button.btnclima {
+  background-color: transparent;
+  border: none;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

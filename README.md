@@ -5,3 +5,6 @@
 
 ## conceitos como UI/UX ainda nao aplicado.
 Pontos como paletas de cores, tipografia, figuras e responsividade ainda nao terminados.
+
+## utilizando o metodo localStorage para armazenar informaçoes no browser
+    Saiba Mais: https://developer.mozilla.org/pt-BR/docs/Web/API/Window/localStorage
