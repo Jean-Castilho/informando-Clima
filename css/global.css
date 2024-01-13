@@ -3,6 +3,8 @@
 @import url(./tipografia.css);
 
 * {
+  font-family: "Roboto", sans-serif;
+
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
@@ -17,50 +19,22 @@ body {
   display: flex;
 }
 
-header {
-  height: 40%;
-  width: 100vw;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  gap: 30px;
-  border-radius: 8px;
-  
-  background-color: rgba(0, 0, 255, 0.396);
+input.textcity {
+  background-color: transparent;
+  color: rgb(1, 2, 9);
+  border: none;
+  height: 32px;
+  width: 270px;
+  padding: 12px;
 }
 
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  color: rgb(13, 13, 14);
-  border-radius: 6px;
-  background-color: rgb(237, 237, 238);
-
+button.btnclima {
+  background-color: transparent;
+  border: none;
   height: 50px;
-  width: 350px;
-}
-
-.climaDiario {
-  height: 50%;
-  width: 85%;
-
+  width: 50px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  flex-direction: row;
-  gap: 15px;
-  
-}
-
-.climaDiario div {
-  min-height: 140px;
-  min-width: 180px;
-  border-radius: 8px;
-
-  background-color: rgba(0, 0, 255, 0.396);
+  justify-content: center;
 }

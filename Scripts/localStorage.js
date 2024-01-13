@@ -6,7 +6,7 @@ const localStoragCity = JSON.parse(localStorage.getItem("StorageCitys"));
 
 //Iniciando LocalStorage;
 
-//exibi as informaçao na iniciaçao;
+//Exibi as informaçao na iniciaçao;
 export function InitLocalStorage() {
   let AllCity =
     localStorage.getItem("StorageCitys") !== null ? localStoragCity : [];
