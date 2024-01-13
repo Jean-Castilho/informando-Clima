@@ -2,46 +2,29 @@ const keyapi = "26fd334d6b582645ee9f618856253924";
 
 //funçoes;
 
-//duas funçao em arquivos diferentes que tem a mesma funcionalidade;
-const validtext = (inputcity) => {
-  //validando texto do input .textcity;
-  return inputcity.length != 0 ? inputcity : false;
-};
-
 const buscandoapi = async (city) => {
   const URLapi = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${keyapi}&lang=pt_br`;
 
   const res = await fetch(URLapi);
   const infos = await res.json();
 
-  console.log(res);
-
-  return infos;
+  return await infos;
 };
 
-const exibinformations = async (city) => {
-  const infos = await buscandoapi(city);
-
+const ExibeAPI = (infos) => {
   console.log(infos);
 };
 
-// tags HTML
-//mescle algumas funcionalidade com o localStorage.js
-const SearchBtn = document.querySelector(".btnclima");
+const alertSpan = (infos) => {
+  console.log(`objeto nao aceito: cod ${infos.cod}`);
+};
 
-// Evento;
-SearchBtn.addEventListener(
-  "click",
+//exportando funcionalidade que percorerra o Array e exibir no front-end;
 
-  (e) => {
-    e.preventDefault();
+export async function RespostAPI(city) {
+  const infos = await buscandoapi(city);
 
-    let namecity = validtext(inputcity.value);
+  //lembre de fazer esta vaildaçao com um pouco mais de atençao!!
 
-    //updatelocal(inputcity.value);
-
-    exibinformations(namecity);
-
-    console.log(cityAll);
-  }
-);
+  infos.cod !== 200 ? alertSpan(infos) : ExibeAPI(infos);
+}

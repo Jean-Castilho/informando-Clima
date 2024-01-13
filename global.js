@@ -1,9 +1,7 @@
-
 //imports
 import { InitLocalStorage } from "./Scripts/localStorage.js";
 
-
-//Events
+//Events;
 window.addEventListener("load", (event) => {
   event.preventDefault();
 
