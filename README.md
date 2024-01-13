@@ -9,6 +9,7 @@ Pontos como paletas de cores, tipografia, figuras e responsividade ainda nao ter
 
 ## para obter o .JSON eu utilizo a API fornecida de forma gratuita;
  Organizaçao: https://openweathermap.org
+ 
  Saiba Mais: https://openweathermap.org/current#concept
 
 ## iniciando a class de gerenciamento;
