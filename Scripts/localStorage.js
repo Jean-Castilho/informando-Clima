@@ -1,43 +1,43 @@
-//Tag HTML;
-const btnclima = document.querySelector(".btnclima");
-
 //utilizando o metodo do browser para armazenar informaçoes no navegador local;
 const localStoragCity = JSON.parse(localStorage.getItem("StorageCitys"));
 
-//Iniciando LocalStorage;
+//importando funcionalidades;
+import { buscandoapi } from "./APIclima.js";
+import { VerifiInput } from "./ValidInput.js";
 
-//Exibi as informaçao na iniciaçao;
+//Iniciando LocalStorage;
 export function InitLocalStorage() {
-  let AllCity =
-    localStorage.getItem("StorageCitys") !== null ? localStoragCity : [];
+  let AllCity = localStorage.getItem("StorageCitys") !== null ? localStoragCity : [];
 
   AllCity.length !== 0 ? LoadingCitys(AllCity) : false;
+
+  //Tag HTML;
+  const btnclima = document.querySelector("#pesquisar");
 
   btnclima.addEventListener("click", (event) => {
     event.preventDefault();
 
     AddCitys(VerifiInput(), AllCity);
   });
+
 }
 
-/*=====Funçoes=====*/
+//percorrendo o array do localStorage;
+const LoadingCitys = (allcity) => {
 
-//verifica os dados de entrada!!
-const VerifiInput = () => {
-  let namecity = document.querySelector(".textcity").value;
+  allcity.forEach((element) => {
+    //Percorre o Array exibindo o objeto da API referente ao nome da cidade;
+    buscandoapi(element.city);
+  });
 
-  //validando texto do input .textcity;
-  return namecity.length != 0 ? namecity : alert("verifique os dados");
-};
-
-//adicionando indentificaçao;
-const GeraID = (allcity) => {
-  return allcity.length + 1;
 };
 
 //adicionando o objeto no array local Allcity;
-const AddCitys = (namecity, AllCity) => {
-  //objeto do array;
+export const AddCitys = (namecity, AllCity) => {
+
+  console.log(namecity);
+
+  //objeto do array; 
   const city = {
     ID: GeraID(AllCity),
     city: namecity,
@@ -49,23 +49,18 @@ const AddCitys = (namecity, AllCity) => {
   //sobe o objeto para o armazenamento do browser;
   Updatelocal(AllCity);
 
-  //percorre o array de cidades no armazenamento do navegador local;
-  LoadingCitys(AllCity);
+  /*percorre o array de cidades no armazenamento do navegador local;
+  LoadingCitys(AllCity);*/
+};
+
+/*=====Funçoes=====*/
+//adicionando indentificaçao;
+const GeraID = (allcity) => {
+  return allcity.length + 1;
 };
 
 //subindo o Array allcity para o localStorage utilizando o metodo setItem;
 const Updatelocal = (allcity) => {
   //estudar mais sobre metodos do proto: LocalStorage;
   localStorage.setItem("StorageCitys", JSON.stringify(allcity));
-};
-
-//importando funcionalidade do APIclima.js;
-import { RespostAPI } from "./APIclima.js";
-
-//percorrendo o array do localStorage;
-const LoadingCitys = (allcity) => {
-  allcity.forEach((element) => {
-    //Percorre o Array exibindo o objeto da API referente ao nome da cidade
-    RespostAPI(element.city);
-  });
 };
