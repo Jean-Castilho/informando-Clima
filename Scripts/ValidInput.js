@@ -6,36 +6,11 @@ export const VerifiInput = () => {
     let namecity = document.querySelector(".textcity").value;
 
     //validando texto do input .textcity;
-    return namecity.length !== 0 ? Validadnamecity(namecity) : alert("verifique os dados");
+    return namecity.length !== 0 ? ValidadcityAPI(namecity) : alert("verifique os dados");
 };
 
-const promiss = new Promise((aceito, recusado) => {
+const ValidadcityAPI = async (namecity) => {
+    const infos = await buscandoapi(namecity);
 
-    const ValidAInfo = async (namecity) => {
-
-        let value = await buscandoapi(namecity);
-
-        return value.cod === 200 ? true : false;
-
-    }
-
-    let namecity = document.querySelector(".textcity").value;
-    return ValidAInfo(namecity) ? aceito(namecity) : recusado(namecity);
-
-});
-
-const Validadnamecity = async (namecity) => {
-
-    let result = await promiss.then(result => {
-        return result
-
-    })
-        .catch(result => {
-            return result
-
-        })
-        .finally(() => {
-            console.log("teste concluido");
-        });
-
+    return infos;
 };

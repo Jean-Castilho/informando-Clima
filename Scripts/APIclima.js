@@ -7,8 +7,6 @@ export const buscandoapi = async (city) => {
   const res = await fetch(URLapi);
 
   const infos = await res.json();
-  console.log(infos.cod);
 
   return infos;
-
 };
