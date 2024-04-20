@@ -6,10 +6,10 @@ export const VerifiInput = () => {
     let namecity = document.querySelector(".textcity").value;
 
     //validando texto do input .textcity;
-    return namecity.length !== 0 ? ValidadcityAPI(namecity) : alert("verifique os dados");
+    return namecity.length !== 0 ? ValidadreturnAPI(namecity) : alert("verifique os dados");
 };
 
-const ValidadcityAPI = async (namecity) => {
+const ValidadreturnAPI = async (namecity) => {
     const infos = await buscandoapi(namecity);
 
     return infos;

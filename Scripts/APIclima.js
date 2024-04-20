@@ -10,3 +10,4 @@ export const buscandoapi = async (city) => {
 
   return infos;
 };
+

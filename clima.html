@@ -7,8 +7,11 @@
 
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+
   <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,700,0,0" />
+
 
   <link rel="stylesheet" href="./css/global.css" />
 
@@ -17,39 +20,82 @@
 
 <body>
 
-  <h1>resultado no log</h1>
-
-  <header>
-
-    <input type="text" class="textcity" value="arraial do cabo" placeholder="pesquisa por local:" />
-
-    <button id="pesquisar"> pesquisar </button>
-
-  </header>
-
   <section>
 
-    <div id="local-atual">
-      <div id="Temp">
-        <span>
+    <section id="infos-basica">
 
-        </span>
-        <span>
 
+      <article id="temperat">
+
+
+      </article>
+
+
+      <article id="dat-img-city"></article>
+
+    </section>
+
+
+
+
+    
+    <section id="infos-detalh">
+
+      <header>
+
+        <input type="text" class="textcity" value="arraial do cabo" placeholder="pesquisa por local:" />
+
+        <span id="pesquisa" class="material-symbols-outlined">
+          search
         </span>
+
+      </header>
+
+      <div id="infos-">
+
+        <div>
+
+          <p>Sensaçao Termica</p>
+
+        </div>
+
+        <div>
+
+          <p>Vento</p>
+
+        </div>
+
+        <div>
+
+          <p>Pressao</p>
+
+        </div>
+
+        <div>
+
+          <p>Umidade</p>
+
+        </div>
+
+        <div>
+
+          <p>Qualidade do Ar</p>
+
+        </div>
+
+        <div>
+
+          <p>Visibilidade</p>
+
+        </div>
+
       </div>
 
-      <div id="info-"></div>
-
-    </div>
-
-    <div id="infos-local">
-
-    </div>
+    </section>
 
   </section>
 
-  <!--ainda e precisso configurar e sincronizar funcionalidade no geral!-->
+  <!--ainda e precisso configurar e sincronizar funcionalidades no geral!-->
 
   <script type="module" src="./global.js"></script>
 </body>

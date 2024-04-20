@@ -1,4 +1,4 @@
-//utilizando o metodo do browser para armazenar informaçoes no navegador local;
+//A propriedade permite acessar um objeto Storage local.
 const localStoragCity = JSON.parse(localStorage.getItem("StorageCitys"));
 
 //Iniciando LocalStorage;
