@@ -20,7 +20,6 @@ window.addEventListener("load", (event) => {
     event.preventDefault();
 
     AddCitys(StorageCitys);
-
   });
 
 });

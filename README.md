@@ -1,11 +1,11 @@
 # Projeto: Informando Clima
 
-## CSS
+# CSS
 
-## conceitos como UI/UX ainda nao aplicado.
+## conceitos como UI/UX.
 Pontos como paletas de cores, tipografia, figuras e responsividade ainda nao terminados.
 
-## JS
+# JS
 
 ## para obter o .JSON eu utilizo a API fornecida de forma gratuita;
  Organizaçao: https://openweathermap.org

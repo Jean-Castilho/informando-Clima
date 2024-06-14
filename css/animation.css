@@ -1,0 +1,21 @@
+.loading {
+    background-size: 200% auto;
+    animation: anim-load 1.4s cubic-bezier(0.76, 0.13, 0.25, 0.87) infinite;
+}
+
+@keyframes anim-load {
+    0% {
+        background-image: linear-gradient(120deg, #6793DD, #a3c5ff);
+        background-position: 0 0;
+    }
+    
+    50% {
+        background-image: linear-gradient(120deg,#a3c5ff, #6793DD);
+        background-position: 100% 0;
+    }
+
+    100% {
+        background-image: linear-gradient(120deg,#6793DD, #a3c5ff);
+        background-position: 0 0;
+    }
+}

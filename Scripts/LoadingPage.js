@@ -1,57 +1,50 @@
 export const LoadingPage = (City) => {
 
 
-  let TagarticleTemperat = document.getElementById("temperat");
-  let TagSectionLocat = document.getElementById("location");
-  let TagDivInfos = document.getElementById("infos-");
+  let TagInfos = document.getElementById("infos-basica");
+  let TagSectionInfos = document.getElementById("infos-detalh");
 
   console.log(`Previsao da ultima cidade pesquisada:`, City);
 
-
-  TagarticleTemperat.innerHTML = ``;
-  TagarticleTemperat.innerHTML += `
+  TagInfos.innerHTML = ``;
+  TagInfos.innerHTML += `
     
-        <span id="graus">
-        <p>${parseInt(City.main.temp)}&deg;C</p>
-        </span>
+    <article id="temperat">
 
-        <span id="max-min">
+      <span id="graus">
+        <p>${parseInt(City.main.temp)}&deg;C</p>
+      </span>
+
+    </article>
+
+    <section id="location">
+
+      <span id="max-min">
 
         <p>Max:  ${parseInt(City.main.temp_max)}&deg;C</p>
         <p>Min:  ${parseInt(City.main.temp_min)}&deg;C</p>
 
-        </span>
-
-        <span id="icon-water-dat">
-        <img src="https://openweathermap.org/img/wn/${City.weather[0].icon}.png" alt="icon">
-        <p>${City.weather[0].description}</p>        
-        </span>
-
-    `;
-
-  TagSectionLocat.innerHTML = ``;
-  TagSectionLocat.innerHTML = `
-    <article>
-
-      <span class="material-symbols-outlined">
-        location_on
       </span>
 
-      <p>${City.name}/ ${City.sys.country}</p>
+      <span id="icon-water-dat">
+        <img src="https://openweathermap.org/img/wn/${City.weather[0].icon}.png" alt="icon">
+          <p>${City.weather[0].description}</p>        
+      </span>
 
+    </section>
 
-    </article>`;
+  `;
 
-  TagDivInfos.innerHTML = ``;
-  TagDivInfos.innerHTML = `
+  TagSectionInfos.innerHTML = ``;
+  TagSectionInfos.innerHTML = `
       
     <div>
 
       <p>Vento</p>
 
-        <span>
-          <p>${parseFloat(City.wind.speed)} km/h</p>
-        </span>
+      <span>
+        <p>${parseFloat(City.wind.speed)} km/h</p>
+      </span>
 
     </div>
       
@@ -81,8 +74,6 @@ export const LoadingPage = (City) => {
 
     </div>
       
-      `;
-
-  console.log(TagarticleTemperat, TagSectionLocat);
+  `;
 
 };
