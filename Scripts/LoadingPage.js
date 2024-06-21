@@ -1,79 +1,78 @@
 export const LoadingPage = (City) => {
 
-
-  let TagInfos = document.getElementById("infos-basica");
-  let TagSectionInfos = document.getElementById("infos-detalh");
+  let TagSectionInfos = document.getElementById("TagAtualizInfos");
 
   console.log(`Previsao da ultima cidade pesquisada:`, City);
-
-  TagInfos.innerHTML = ``;
-  TagInfos.innerHTML += `
-    
-    <article id="temperat">
-
-      <span id="graus">
-        <p>${parseInt(City.main.temp)}&deg;C</p>
-      </span>
-
-    </article>
-
-    <section id="location">
-
-      <span id="max-min">
-
-        <p>Max:  ${parseInt(City.main.temp_max)}&deg;C</p>
-        <p>Min:  ${parseInt(City.main.temp_min)}&deg;C</p>
-
-      </span>
-
-      <span id="icon-water-dat">
-        <img src="https://openweathermap.org/img/wn/${City.weather[0].icon}.png" alt="icon">
-          <p>${City.weather[0].description}</p>        
-      </span>
-
-    </section>
-
-  `;
 
   TagSectionInfos.innerHTML = ``;
   TagSectionInfos.innerHTML = `
       
-    <div>
+    <section id="infos-basica">
 
-      <p>Vento</p>
+      <article id="temperat">
 
-      <span>
-        <p>${parseFloat(City.wind.speed)} km/h</p>
-      </span>
+        <span id="graus">
+          <p>${parseInt(City.main.temp)}&deg;C</p>
+        </span>
 
-    </div>
-      
-    <div>
+      </article>
 
-      <p>Pressao</p>
+      <section id="location">
 
-      <span>
-        <p>${City.main.pressure}</p>
-      </span>
+        <span id="max-min">
 
-    </div>
+          <p>Max: ${parseInt(City.main.temp_max)}&deg;C</p>
+          <p>Min: ${parseInt(City.main.temp_min)}&deg;C</p>
 
-    <div>
+        </span>
 
-      <p>Umidade</p>
+        <span id="icon-water-dat">
+          <img src="https://openweathermap.org/img/wn/${City.weather[0].icon}.png" alt="icon">
+          <p>${City.weather[0].description}</p>
+        </span>
 
-      <span>${City.main.humidity}%</span>
+      </section>
+    </section>
 
-    </div>
+    <section id="infos-detalh">
 
-    <div>
+      <div>
 
-      <p>Visibilidade</p>
+        <p>Vento</p>
 
-      <span>${City.visibility}</span>
+        <span>
+          <p>${parseFloat(City.wind.speed)} km/h</p>
+        </span>
 
-    </div>
-      
+      </div>
+
+      <div>
+
+        <p>Pressao</p>
+
+        <span>
+          <p>${City.main.pressure}</p>
+        </span>
+
+      </div>
+
+      <div>
+
+        <p>Umidade</p>
+
+        <span>${City.main.humidity}%</span>
+
+      </div>
+
+      <div>
+
+        <p>Visibilidade</p>
+
+        <span>${City.visibility}</span>
+
+      </div>
+
+    </section>
   `;
 
 };

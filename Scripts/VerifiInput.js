@@ -1,7 +1,7 @@
-//validando retorno do objeto API.cod
+// validando retorno do objeto API.cod;
 import { buscandoapi } from "./APIclima.js";
 
-//verifica os dados de entrada!!
+// verifica os dados de entrada!!
 export const VerifiInput = () => {
     let namecity = document.querySelector(".textcity").value;
 

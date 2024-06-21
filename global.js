@@ -1,6 +1,6 @@
 //imports
 import { InitLocalStorage } from "./Scripts/localStorage.js";
-import { AddCitys } from "./Scripts/UpdatCitys.js";
+import { AddCitys } from "./Scripts/AddCitys.js";
 
 //Events;
 window.addEventListener("load", (event) => {
@@ -20,6 +20,7 @@ window.addEventListener("load", (event) => {
     event.preventDefault();
 
     AddCitys(StorageCitys);
+    
   });
 
 });
